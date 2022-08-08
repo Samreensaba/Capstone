@@ -14,7 +14,7 @@ const MyNav = ()=>{
         <Link className="nav-link" to="/" style={{color:"white"}}>Home</Link>
       </li>
       <li className="nav-item">
-        <Link className="nav-link" style={{color:"white"}} to="/registration">Register</Link>
+        <Link className="nav-link" style={{color:"white"}} to="/registration">Register CV</Link>
       </li>
       <li className="nav-item dropdown">
         <a className="nav-link dropdown-toggle" style={{color:"white"}} href="#" role="button" data-toggle="dropdown" aria-expanded="false">

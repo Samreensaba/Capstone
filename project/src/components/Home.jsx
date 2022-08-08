@@ -1,6 +1,12 @@
-const Home = ()=>{
+import Hero from "./Hero"
+import HomeBody from "./HomeBody"
+
+const Home = () =>{
     return(
-        <div>HomePage</div>
+        <>
+        <Hero/>
+        <HomeBody/>
+        </>
     )
 }
 export default Home
