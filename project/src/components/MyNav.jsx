@@ -31,7 +31,7 @@ const MyNav = ()=>{
         <a className="nav-link" style={{color:"white"}}>About</a>
       </li>
       <li className="nav-item">
-        <a className="nav-link" style={{color:"white"}}>Contact Us</a>
+        <Link className="nav-link" to="/ContactUs" style={{color:"white"}}>Contact Us</Link>
       </li>
     </ul>
   </div>

@@ -1,6 +1,8 @@
 import { useEffect } from "react"
 import { useState } from "react"
 import { Button, Card, Col, Container, Form, Row } from "react-bootstrap"
+import { Link } from "react-router-dom"
+import { SpinnerDiamond } from "spinners-react"
 
 const AllJobs = () => {
     const [jobs, setJobs] = useState([])
@@ -14,9 +16,9 @@ const AllJobs = () => {
         fetchJobs()
     }, [])
 
-    useEffect(()=>{
+    useEffect(() => {
         handleFilter(query)
-    },[query])
+    }, [query])
 
 
 
@@ -47,34 +49,52 @@ const AllJobs = () => {
     const handleFilter = (query) => {
         const filteredJobs = jobs.filter((job) => {
             return job.title.toLowerCase().includes(query.toLowerCase())
-            
+
         })
         setJobs(filteredJobs)
     }
     return (
         <Container className="body">
-            <Row>
-                <Col xs={12} md={8}>
-                    <Form className="mt-4 mb-2" onSubmit={handleFilter}>
+            <Row className="justify-content-center">
+                <Col xs={12} md={10}>
+                    <div><Form className="mt-4 mb-2" onSubmit={handleFilter}>
                         <Form.Control
                             type="search"
                             value={query}
                             placeholder="Key Words"
-                            onChange={(e)=>setQuery(e.target.value)}
+                            onChange={(e) => setQuery(e.target.value)}
                         />
                     </Form>
-                    {isLoading&& (
-            <SpinnerDiamond size={90} thickness={180} speed={88} color="rgba(57, 90, 172, 1)" secondaryColor="rgba(165, 57, 172, 0.44)" />
-          )}
-                    {jobs && 
+                    </div>
+                    {isLoading && (
+                        <div className="text-center"><SpinnerDiamond size={50} thickness={180} speed={88} color="rgba(57, 90, 172, 1)" secondaryColor="rgba(165, 57, 172, 0.44)" /></div>
+                    )}
+                    {jobs &&
                         jobs.map(job => (
                             <Card className="job-card" key={job._id}>
                                 <Card.Body>
-                                    <Card.Title>Title: {job.title}</Card.Title>
+                                    <Card.Title>{job.title} - {job.company_name}</Card.Title>
                                     <Card.Text>
-                                        <b>Company:</b> {job.company_name}
+                                        <div className="d-flex justify-content-around mt-3 mb-3">
+                                            <div className="text-center">
+                                                <div className="text-black-50">Salary</div>
+                                                <div>{job.salary}</div>
+                                            </div>
+                                            <div className="text-center">
+                                                <div className="text-black-50">Location</div>
+                                                <div>{job.candidate_required_location}</div>
+                                            </div>
+                                            <div className="text-center">
+                                                <div className="text-black-50">Category</div>
+                                                <div>{job.category}</div>
+                                            </div>
+                                            <div className="text-center">
+                                                <div className="text-black-50">Type</div>
+                                                <div>{job.job_type}</div>
+                                            </div>
+                                        </div>
                                     </Card.Text>
-                                    <Button variant="primary">Know More</Button>
+                                    <Link to={`/jobDetails/${job._id}`}><Button variant="primary" className="cardBttn">Know More</Button></Link>
                                 </Card.Body>
                             </Card>
                         ))
