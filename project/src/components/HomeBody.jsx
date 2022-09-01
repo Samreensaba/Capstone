@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 
 const HomeBody = () => {
     return (
-        <Container className="body">
+        <Container className="pt-2 mb-3" style={{border: "1px solid grey", backgroundColor: "whitesmoke"}}>
             <Row>
                 <Col xs={12} md={6}>
                 <h2>Data Science/Big Data</h2>
@@ -14,7 +14,7 @@ const HomeBody = () => {
                             <Card.Text className="font-weight-bold">
                                 Look at the hottest data science jobs in the market right now.
                             </Card.Text>
-                            <Link to="/BigData"><Button className="card-bttn bttn">EXPLORE JOBS</Button></Link>
+                            <Link to="/BigData"><Button className="card-bttn bttn button">EXPLORE JOBS</Button></Link>
                         </Card.ImgOverlay>
                     </Card>
                 </Col>
@@ -27,7 +27,7 @@ const HomeBody = () => {
                             <Card.Text className="font-weight-bold">
                                 In Demand developers role for 2022.
                             </Card.Text>
-                            <Link to="/software"><Button className="card-bttn bttn">EXPLORE JOBS</Button></Link>
+                            <Link to="/software"><Button className="card-bttn bttn button">EXPLORE JOBS</Button></Link>
                         </Card.ImgOverlay>
                     </Card>
                 </Col>
@@ -42,7 +42,7 @@ const HomeBody = () => {
                             <Card.Text className="font-weight-bold">
                                 Higest paying jobs in cloud infrastucture.
                             </Card.Text>
-                            <Link to="/cloud"><Button className="card-bttn bttn">EXPLORE JOBS</Button></Link>
+                            <Link to="/cloud"><Button className="card-bttn bttn button">EXPLORE JOBS</Button></Link>
                         </Card.ImgOverlay>
                     </Card>
                 </Col>
@@ -55,7 +55,7 @@ const HomeBody = () => {
                             <Card.Text className="font-weight-bold">
                                 Higest Paying Cyber Security jobs in the market.
                             </Card.Text>
-                            <Link to="/ITSecurity"><Button className="card-bttn bttn">EXPLORE JOBS</Button></Link>
+                            <Link to="/ITSecurity"><Button className="card-bttn bttn button">EXPLORE JOBS</Button></Link>
                         </Card.ImgOverlay>
                     </Card>
                 </Col>
@@ -70,7 +70,7 @@ const HomeBody = () => {
                             <Card.Text className="font-weight-bold">
                                 Transition your career into Analytics.
                             </Card.Text>
-                            <Link to="/analytics"><Button className="card-bttn bttn">EXPLORE JOBS</Button></Link>
+                            <Link to="/analytics"><Button className="card-bttn bttn button">EXPLORE JOBS</Button></Link>
                         </Card.ImgOverlay>
                     </Card>
                 </Col>
@@ -83,7 +83,7 @@ const HomeBody = () => {
                             <Card.Text className="font-weight-bold">
                                 Entry level to skilled level project management jobs.
                             </Card.Text>
-                            <Link to="/projectmanagement"><Button className="card-bttn bttn">EXPLORE JOBS</Button></Link>
+                            <Link to="/projectmanagement"><Button className="card-bttn bttn button">EXPLORE JOBS</Button></Link>
                         </Card.ImgOverlay>
                     </Card>
                 </Col>

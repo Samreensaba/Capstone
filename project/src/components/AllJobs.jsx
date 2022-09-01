@@ -1,11 +1,17 @@
 import { useEffect } from "react"
 import { useState } from "react"
 import { Button, Card, Col, Container, Form, Row } from "react-bootstrap"
+import { Star, StarFill } from "react-bootstrap-icons"
 import { Link } from "react-router-dom"
 import { SpinnerDiamond } from "spinners-react"
+import { addToFav, removeFromFav } from "../store/actions"
+import {connect} from 'react-redux'
+import { useSelector, useDispatch } from "react-redux"
+
 
 const AllJobs = () => {
     const [jobs, setJobs] = useState([])
+    const [filteredJobs, setFilteredJobs] = useState([])
     const [query, setQuery] = useState("")
     const [isLoading, setIsLoading] = useState(true)
 
@@ -20,8 +26,7 @@ const AllJobs = () => {
         handleFilter(query)
     }, [query])
 
-
-
+    
     const fetchJobs = async () => {
         try {
             const response = await fetch(basepoint, {
@@ -31,8 +36,9 @@ const AllJobs = () => {
             if (response.ok) {
                 const data = await response.json()
                 console.log(data)
-                const jobsdata = data.data.slice(0, 20)
+                const jobsdata = data.data
                 setJobs(jobsdata)
+                setFilteredJobs(jobsdata)
                 setIsLoading(false)
             }
             else {
@@ -51,8 +57,22 @@ const AllJobs = () => {
             return job.title.toLowerCase().includes(query.toLowerCase())
 
         })
-        setJobs(filteredJobs)
+        setFilteredJobs(filteredJobs)
     }
+
+    
+    const favourites = useSelector((state)=>state.favourites)
+    const dispatch = useDispatch()
+    const isFav = favourites.find((job)=>job._id === job._id)
+
+    useEffect(() => {
+        console.log(favourites);
+    }, [favourites])
+
+    const toggleFavourite =(job)=>{ 
+        isFav 
+        ?dispatch(removeFromFav(job))
+        :dispatch(addToFav(job)) }
     return (
         <Container className="body">
             <Row className="justify-content-center">
@@ -69,8 +89,8 @@ const AllJobs = () => {
                     {isLoading && (
                         <div className="text-center"><SpinnerDiamond size={50} thickness={180} speed={88} color="rgba(57, 90, 172, 1)" secondaryColor="rgba(165, 57, 172, 0.44)" /></div>
                     )}
-                    {jobs &&
-                        jobs.map(job => (
+                    {filteredJobs &&
+                        filteredJobs.slice(0,20).map(job => (
                             <Card className="job-card" key={job._id}>
                                 <Card.Body>
                                     <Card.Title>{job.title} - {job.company_name}</Card.Title>
@@ -94,8 +114,14 @@ const AllJobs = () => {
                                             </div>
                                         </div>
                                     </Card.Text>
-                                    <Link to={`/jobDetails/${job._id}`}><Button variant="primary" className="cardBttn">Know More</Button></Link>
+                                    <Link to={`/jobDetails/${job._id}`}><Button className="button mr-5">Know More</Button></Link>
+                                    {
+                                        isFav
+                                        ?<StarFill color="gold" size={20} onClick={()=>{toggleFavourite(job)}}/>
+                                        :<Star color="black" size={20} onClick={()=>{toggleFavourite(job)}}/>
+                                        }
                                 </Card.Body>
+                                
                             </Card>
                         ))
                     }

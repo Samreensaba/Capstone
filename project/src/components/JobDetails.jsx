@@ -38,36 +38,35 @@ const JobDetails = () => {
 
 
     return (
-        <Container className="body p-5">
+        <Container className="pt-4 pl-5 mt-3 mb-3" style={{backgroundColor: "whitesmoke", border: "1px solid grey"}}>
             <Row>
-                <Col xs={12} md={10} className="mt-4">
+                <Col xs={12} md={12} className="mt-4">
                     {job &&
                         <>
-                            <p className='ml-5'>Ref: {job._id}</p>
-                            <h1 className='text-info'>{job.title}</h1>
-                            <div className="d-flex justify-content-around mt-5 mb-5">
-                                            <div className="text-center">
-                                                <div className="text-black-50">Salary</div>
-                                                <div>{job.salary}</div>
-                                            </div>
-                                            <div className="text-center">
-                                                <div className="text-black-50">Location</div>
-                                                <div>{job.candidate_required_location}</div>
-                                            </div>
-                                            <div className="text-center">
-                                                <div className="text-black-50">Category</div>
-                                                <div>{job.category}</div>
-                                            </div>
-                                            <div className="text-center">
-                                                <div className="text-black-50">Type</div>
-                                                <div>{job.job_type}</div>
-                                            </div>
+                            <div style={{ borderBottom: '3px solid light grey', marginBottom: "3rem", boxShadow: "0 2px 4px rgb(0 0 0 / 8%)" }}>
+                                <div style={{ borderBottom: "2px solid rgba(0,0,0,.08)", padding: '10px' }}><h1 className='text-dark'>{job.title}</h1></div>
+                                <div className="d-flex justify-content-around mt-3 mb-4" style={{ backgroundColor: "rgb(211, 223, 250)",border: "2px solid white", padding: '10px' }}>
+                                    <div className="text-center" style={{borderRight: "0.2px solid black", paddingLeft: '6.1rem', paddingRight: '6.1rem' }}>
+                                        <div className="text-black-50">Salary</div>
+                                        <div>{job.salary}</div>
+                                    </div>
+                                    <div className="text-center" style={{ borderRight: "0.2px solid black", paddingLeft: '6.1rem', paddingRight: '6.1rem' }}>
+                                        <div className="text-black-50">Location</div>
+                                        <div>{job.candidate_required_location}</div>
+                                    </div>
+                                    <div className="text-center" style={{ borderRight: "0.2px solid black", paddingLeft: '6.1rem', paddingRight: '6.1rem' }}>
+                                        <div className="text-black-50">Category</div>
+                                        <div>{job.category}</div>
+                                    </div>
+                                    <div className="text-center" style={{ paddingLeft: '6.1rem', paddingRight: '6.1rem' }}>
+                                        <div className="text-black-50">Type</div>
+                                        <div>{job.job_type}</div>
+                                    </div>
+                                </div>
+                                <a href={job.url} ><Button className='m-3 button'>Apply on Company website</Button></a>
+                                <Link to="/registration"><Button className='button'>Apply through W3 Solutions</Button></Link>
                             </div>
-                            <div className='ml-5'>Published on: {job.publication_date}</div>
-                            <a href={job.url} ><Button variant='success' className='m-3'>Apply on Company website</Button></a>
-                            <Link to="/registration"><Button variant='info'>Apply through W3 Solutions</Button></Link>
-
-                            <div dangerouslySetInnerHTML={{__html: job.description}} />
+                            <div dangerouslySetInnerHTML={{ __html: job.description }} />
                         </>
                     }
                 </Col>

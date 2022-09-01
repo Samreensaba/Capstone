@@ -48,7 +48,7 @@ const SearchList = ({ query, heading, description, image }) => {
             <Container className="body">
                 <Row className="justify-content-center">
                     <Col xs={12} md={8} className="pt-3 ">
-                        <Link to="/AllJobs"><Button className="mr-5">All Jobs</Button></Link> <Link to="/"><Button className="ml-5">Home</Button></Link>
+                        <Link to="/AllJobs"><Button className="mr-5 button">All Jobs</Button></Link> <Link to="/"><Button className="button ml-5">Home</Button></Link>
                         {isLoading && (
                             <SpinnerDiamond size={90} thickness={180} speed={88} color="rgba(57, 90, 172, 1)" secondaryColor="rgba(165, 57, 172, 0.44)" />
                         )}
@@ -77,12 +77,12 @@ const SearchList = ({ query, heading, description, image }) => {
                                             </div>
                                         </div>
                                     </Card.Text>
-                                    <Link to={`/jobDetails/${job._id}`}><Button variant="primary" className="cardBttn">Know More</Button></Link>
+                                    <Link to={`/jobDetails/${job._id}`}><Button className="cardBttn button">Know More</Button></Link>
                                 </Card.Body>
                                 </Card>
                             ))
                         }
-                        <Link to="/AllJobs"><Button className="mr-5 mb-3 mt-2">All Jobs</Button></Link> <Link to="/"><Button className="ml-5 mb-3 mt-2">Home</Button></Link>
+                        <Link to="/AllJobs"><Button className="mr-5 mb-3 mt-2 button">All Jobs</Button></Link> <Link to="/"><Button className="button ml-5 mb-3 mt-2">Home</Button></Link>
                     </Col>
 
                 </Row>
