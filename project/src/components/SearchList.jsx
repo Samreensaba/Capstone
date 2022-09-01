@@ -3,6 +3,7 @@ import { useState } from "react"
 import { Button, Card, Col, Container, Form, Row } from "react-bootstrap"
 import { Link } from "react-router-dom"
 import { SpinnerDiamond } from "spinners-react"
+import SingleJob from "./SingleJob"
 
 const SearchList = ({ query, heading, description, image }) => {
 
@@ -54,32 +55,7 @@ const SearchList = ({ query, heading, description, image }) => {
                         )}
                         {list &&
                             list.map(job => (
-                                <Card className="job-card mb-1" key={job._id}>
-                                    <Card.Body>
-                                    <Card.Title>{job.title} - {job.company_name}</Card.Title>
-                                    <Card.Text>
-                                        <div className="d-flex justify-content-around mt-3 mb-3">
-                                            <div className="text-center">
-                                                <div className="text-black-50">Salary</div>
-                                                <div>{job.salary}</div>
-                                            </div>
-                                            <div className="text-center">
-                                                <div className="text-black-50">Location</div>
-                                                <div>{job.candidate_required_location}</div>
-                                            </div>
-                                            <div className="text-center">
-                                                <div className="text-black-50">Category</div>
-                                                <div>{job.category}</div>
-                                            </div>
-                                            <div className="text-center">
-                                                <div className="text-black-50">Type</div>
-                                                <div>{job.job_type}</div>
-                                            </div>
-                                        </div>
-                                    </Card.Text>
-                                    <Link to={`/jobDetails/${job._id}`}><Button className="cardBttn button">Know More</Button></Link>
-                                </Card.Body>
-                                </Card>
+                                <SingleJob job={job}/>
                             ))
                         }
                         <Link to="/AllJobs"><Button className="mr-5 mb-3 mt-2 button">All Jobs</Button></Link> <Link to="/"><Button className="button ml-5 mb-3 mt-2">Home</Button></Link>

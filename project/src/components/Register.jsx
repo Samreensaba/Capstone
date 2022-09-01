@@ -45,13 +45,13 @@ const Register = () => {
         }
     }
     return (
-        <Container className='registrationForm'>
+        <Container className='registrationForm pt-3' >
             <Row >
                 <Col xs={12} md={6} className="form">
 
                     <Form onSubmit={postProfile}>
                         <Form.Group>
-                            <Form.Label>First Name</Form.Label>
+                            <Form.Label>First Name *</Form.Label>
                             <Form.Control type="text" value={addProfile.first_name}
                             onChange={(e) =>
                                 setAddProfile({ ...addProfile, first_name: e.target.value })
@@ -59,7 +59,7 @@ const Register = () => {
                             placeholder='Enter Your First Name' />
                         </Form.Group>
                         <Form.Group>
-                            <Form.Label>Last Name</Form.Label>
+                            <Form.Label>Last Name *</Form.Label>
                             <Form.Control type="text" value={addProfile.last_name}
                             onChange={(e) =>
                                 setAddProfile({ ...addProfile, last_name: e.target.value })
@@ -67,7 +67,7 @@ const Register = () => {
                             placeholder='Enter Your Last Name' />
                         </Form.Group>
                         <Form.Group>
-                            <Form.Label>Telephone</Form.Label>
+                            <Form.Label>Telephone *</Form.Label>
                             <Form.Control type="text" value={addProfile.telephone}
                             onChange={(e) =>
                                 setAddProfile({ ...addProfile, telephone: e.target.value })
@@ -75,7 +75,7 @@ const Register = () => {
                             placeholder='Mobile Number including area code' />
                         </Form.Group>
                         <Form.Group className="mb-3" controlId="formBasicEmail">
-                            <Form.Label>Email address</Form.Label>
+                            <Form.Label>Email address *</Form.Label>
                             <Form.Control type="email" value={addProfile.email_address}
                             onChange={(e) =>
                                 setAddProfile({ ...addProfile, email_address: e.target.value })
@@ -87,7 +87,7 @@ const Register = () => {
                         </Form.Group>
 
                         <Form.Group className="mb-3" controlId="formBasicPassword">
-                            <Form.Label>Password</Form.Label>
+                            <Form.Label>Password *</Form.Label>
                             <Form.Control type="password" value={addProfile.password}
                                 onChange={(e) =>
                                     setAddProfile({ ...addProfile, password: e.target.value })
@@ -101,7 +101,7 @@ const Register = () => {
                         <Form.Group className="mb-3" controlId="formBasicCheckbox">
                             <Form.Check type="checkbox" label="I agree to all Terms and Conitions" />
                         </Form.Group>
-                        <Button variant="primary" type="submit">
+                        <Button className='button' type="submit">
                             Submit
                         </Button>
                     </Form>

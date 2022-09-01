@@ -4,7 +4,7 @@
 
 .navBar{
   width: 100%;
-  background-color: rgb(57, 57, 143);
+  background-color: #1541c8;
   position: fixed;
   display: flex;
   flex-wrap: wrap;
@@ -47,11 +47,25 @@
   height: 23rem;
   border-radius: 5%;
 }
+
 .card{
   height: 300px;
   margin-bottom: 3rem;
   margin-top: 1rem;
 }
+
+.card .img-overlay{
+  visibility: hidden;
+  opacity: 0;
+  transition-duration: 0.5s;
+
+}
+
+.card:hover .img-overlay{
+  visibility: visible;
+  opacity: 1;
+}
+
 .card-img{
   width: 100%;
   height: 100%;
@@ -66,18 +80,24 @@ h2, h3{
   background-color: rgb(196, 232, 248);
 }
 .footer{
-  background-color: azure;
+  background-color: #1541c8;
+  color: whitesmoke;
   padding-bottom: 2rem;
+  bottom: 0;
+
 }
 .job-card{
   max-height: 200px;
 }
 .button{
-  background: linear-gradient(40deg,#1541c8 0,#820ebd 100%);
-  background: #1541c8;
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(21,65,200,1) 40%, rgba(130,14,189,1) 100%);
   text-decoration: none;
-    border-radius: 50px;
-    color: #fff;
-    padding: 10px 50px;
-    font-weight: 400;
-  }
+  border-radius: 50px;
+  color: #fff;
+  padding: 10px 30px;
+  font-weight: 400;
+}
+
+.button:hover{
+  color: black;
+}

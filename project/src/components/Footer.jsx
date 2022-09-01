@@ -6,7 +6,7 @@ const Footer = () => {
             <Container>
                 <Row>
                     <Col xs={12} md={6} className="pt-3">
-                        <h3>WEST 3 SOLUTIONS</h3>
+                        <h3 style={{color:"whitesmoke"}}>WEST 3 SOLUTIONS</h3>
                         <h6>Registered Address:</h6>
                         <p>55 Wilberforce Road<br/>
                         London<br/>
