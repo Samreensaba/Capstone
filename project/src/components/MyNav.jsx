@@ -2,7 +2,7 @@ import { Link } from "react-router-dom"
 
 const MyNav = () => {
   return (
-    <nav className="navbar-expand-lg navBar">
+    <nav className="navbar-expand-md navBar">
       <Link className="navbar-brand" style={{ color: "white" }} to="/">West 3 Solutions</Link>
       <div className="collapse navbar-collapse" id="navbarSupportedContent">
         <ul className="navbar-nav mr-auto">
