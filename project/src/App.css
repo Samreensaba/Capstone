@@ -4,14 +4,15 @@
 
 .navBar{
   width: 100%;
-  background-color: #1541c8;
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(28,14,189,1) 100%);
   position: fixed;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   padding: 0.5rem 11rem;
-  z-index: 3;
+  z-index: 4;
 }
 .registrationForm{
   margin-top: 2rem;
@@ -62,9 +63,13 @@ h2, h3{
   background-color: rgb(196, 232, 248);
 }
 .footer{
-  background-color: #1541c8;
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(28,14,189,1) 100%);
   color: whitesmoke;
-  bottom: 0;
+  /* bottom: 0;
+  right: 0;
+  left: 0;
+  position: fixed; */
 }
 .job-card{
   max-height: 200px;
@@ -83,6 +88,7 @@ h2, h3{
 }
 .carousel{
  margin-bottom: 2rem;
+ z-index: 1;
 }
 .carousel-img{
   height: 450px;
