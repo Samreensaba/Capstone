@@ -2,7 +2,7 @@ import { Col, Container, Row } from "react-bootstrap"
 
 const Footer = () => {
     return (
-        <Footer className="footer">
+        <div className="footer">
             <Container>
                 <Row>
                     <Col xs={12} md={6} className="pt-3">
@@ -20,7 +20,7 @@ const Footer = () => {
                     </Col>
                 </Row>
             </Container>
-        </Footer>
+        </div>
     )
 }
 export default Footer
