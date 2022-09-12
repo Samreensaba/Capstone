@@ -2,7 +2,8 @@ import { useEffect } from "react"
 import { useState } from "react"
 import { Button, Card, Col, Container, Form, Row } from "react-bootstrap"
 import { Link } from "react-router-dom"
-import { SpinnerDiamond } from "spinners-react"
+import { Spinner } from "react-spinners"
+import { SpinnerCircular } from "spinners-react"
 import SingleJob from "./SingleJob"
 
 
@@ -74,7 +75,7 @@ const AllJobs = () => {
                     </Form>
                     </div>
                     {isLoading && (
-                        <div className="text-center"><SpinnerDiamond size={50} thickness={180} speed={88} color="rgba(57, 90, 172, 1)" secondaryColor="rgba(165, 57, 172, 0.44)" /></div>
+                        <div className="text-center"><SpinnerCircular size={50} thickness={180} speed={88} color="rgba(57, 90, 172, 1)" secondaryColor="rgba(165, 57, 172, 0.44)" /></div>
                     )}
                     {filteredJobs &&
                         filteredJobs.slice(0,20).map(job => (

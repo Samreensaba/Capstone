@@ -4,21 +4,27 @@ import { Link } from "react-router-dom"
 import { useSelector, useDispatch } from "react-redux"
 import { addToFav, removeFromFav } from "../store/actions"
 import { useEffect } from "react"
+import { useState } from "react"
 
-const SingleJob = ({job}) => {
+const SingleJob = ({job}) => {   
+
+    
 
     const favourites = useSelector((state)=>state.favourites)
     const dispatch = useDispatch()
-    const isFav = favourites.find((job)=>job._id === job._id)
+    /* console.log(favourites); */
+    const isFav = favourites.find((j) => j._id === job._id)
+    ? true
+    : false;
 
-    useEffect(() => {
-        console.log(favourites);
-    }, [favourites])
-
-    const toggleFavourite =(job)=>{ 
+    const toggleFavourite =()=>{ 
         isFav 
         ?dispatch(removeFromFav(job))
         :dispatch(addToFav(job)) }
+
+        useEffect(() => {
+            console.log(favourites);
+        }, [favourites]) 
     return (
         <>
             <Card className="job-card" key={job._id}>
@@ -44,12 +50,16 @@ const SingleJob = ({job}) => {
                             </div>
                         </div>
                     </Card.Text>
-                    <Link to={`/jobDetails/${job._id}`}><Button className="button mr-5">Know More</Button></Link>
+                    <div className="d-flex justify-content-between">
+                    <div>  <Link to={`/jobDetails/${job._id}`}><Button className="button mr-5">Know More</Button></Link></div>
+                    <div className="pr-5">
                     {
                         isFav
                             ? <StarFill color="gold" size={20} onClick={() => { toggleFavourite(job) }} />
                             : <Star color="black" size={20} onClick={() => { toggleFavourite(job) }} />
                     }
+                    </div>
+                    </div>
                 </Card.Body>
 
             </Card>

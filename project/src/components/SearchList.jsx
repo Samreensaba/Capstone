@@ -2,7 +2,7 @@ import { useEffect } from "react"
 import { useState } from "react"
 import { Button, Card, Col, Container, Form, Row } from "react-bootstrap"
 import { Link } from "react-router-dom"
-import { SpinnerDiamond } from "spinners-react"
+import { SpinnerCircular } from "spinners-react"
 import SingleJob from "./SingleJob"
 
 const SearchList = ({ query, heading, description, image }) => {
@@ -49,16 +49,32 @@ const SearchList = ({ query, heading, description, image }) => {
             <Container className="body">
                 <Row className="justify-content-center">
                     <Col xs={12} md={8} className="pt-3 ">
-                        <Link to="/AllJobs"><Button className="mr-5 button">All Jobs</Button></Link> <Link to="/"><Button className="button ml-5">Home</Button></Link>
+                        {/* <Link to="/AllJobs"><Button className="mr-5 button">All Jobs</Button></Link> <Link to="/"><Button className="button ml-5">Home</Button></Link> */}
+                        <div className="d-flex justify-content-between">
+                            <div>
+                                <Link to="/AllJobs"><Button className="mr-5 mb-3 mt-2 button">All Jobs</Button></Link>
+                            </div>
+                            <div>
+                                <Link to="/"><Button className="button ml-5 mb-3 mt-2">Home</Button></Link>
+                            </div>
+                        </div>
                         {isLoading && (
-                            <SpinnerDiamond size={90} thickness={180} speed={88} color="rgba(57, 90, 172, 1)" secondaryColor="rgba(165, 57, 172, 0.44)" />
+                            <SpinnerCircular size={90} thickness={180} speed={88} color="rgba(57, 90, 172, 1)" secondaryColor="rgba(165, 57, 172, 0.44)" />
                         )}
                         {list &&
                             list.map(job => (
-                                <SingleJob job={job}/>
+                                <SingleJob job={job} />
                             ))
                         }
-                        <Link to="/AllJobs"><Button className="mr-5 mb-3 mt-2 button">All Jobs</Button></Link> <Link to="/"><Button className="button ml-5 mb-3 mt-2">Home</Button></Link>
+                        <div className="d-flex justify-content-between">
+                            <div>
+                                <Link to="/AllJobs"><Button className="mr-5 mb-3 mt-2 button">All Jobs</Button></Link>
+                            </div>
+                            <div>
+                                <Link to="/"><Button className="button ml-5 mb-3 mt-2">Home</Button></Link>
+                            </div>
+                        </div>
+
                     </Col>
 
                 </Row>

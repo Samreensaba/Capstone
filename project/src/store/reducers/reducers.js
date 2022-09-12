@@ -4,7 +4,7 @@ const initialState={
     favourites:[]
 }
 
-export default function mainReducer(state= initialState, action){
+const mainReducer= (state= initialState, action)=>{
 
     const{type,payload}=action
 
@@ -23,3 +23,4 @@ export default function mainReducer(state= initialState, action){
             return state
     }
 }
+export default mainReducer

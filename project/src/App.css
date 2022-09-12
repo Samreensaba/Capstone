@@ -84,7 +84,9 @@ h2, h3{
 }
 
 .button:hover{
-  color: black;
+   color: rgb(252, 251, 251);
+  font-weight: 600;
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgb(131, 149, 203) 40%, rgb(142, 95, 166) 100%);
 }
 .carousel{
  margin-bottom: 2rem;

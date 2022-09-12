@@ -10,7 +10,7 @@ const Register = () => {
         last_name: "",
         telephone: "",
         email_address: "",
-        password: ""
+        skills: ""
     })
 
     const postProfile = async (e) => {
@@ -35,7 +35,7 @@ const Register = () => {
                     last_name: "",
                     telephone: "",
                     email_address: "",
-                    password: ""
+                    skills: ""
                 });
             } else {
                 alert("error");
@@ -87,12 +87,13 @@ const Register = () => {
                         </Form.Group>
 
                         <Form.Group className="mb-3" controlId="formBasicPassword">
-                            <Form.Label>Password *</Form.Label>
-                            <Form.Control type="password" value={addProfile.password}
+                            <Form.Label>Skills *</Form.Label>
+                            <Form.Control type="text" value={addProfile.skills}
                                 onChange={(e) =>
-                                    setAddProfile({ ...addProfile, password: e.target.value })
+                                    setAddProfile({ ...addProfile, skills: e.target.value })
                                 }
-                                placeholder="Password" />
+                                placeholder="seperate your skills with commas" />
+                                
                         </Form.Group>
                         <Form.Group>
                             <Form.Label>Upload CV</Form.Label>
