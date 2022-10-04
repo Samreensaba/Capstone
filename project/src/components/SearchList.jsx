@@ -59,7 +59,7 @@ const SearchList = ({ query, heading, description, image }) => {
                             </div>
                         </div>
                         {isLoading && (
-                            <SpinnerCircular size={90} thickness={180} speed={88} color="rgba(57, 90, 172, 1)" secondaryColor="rgba(165, 57, 172, 0.44)" />
+                            <SpinnerCircular size={50} thickness={180} speed={88} color="rgba(57, 90, 172, 1)" secondaryColor="rgba(165, 57, 172, 0.44)" style={{marginLeft:"50%"}} />
                         )}
                         {list &&
                             list.map(job => (
