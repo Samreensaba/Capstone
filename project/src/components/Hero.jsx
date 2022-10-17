@@ -4,12 +4,12 @@ import { Link } from "react-router-dom"
 const Hero = () => {
     return (
 
-        <div className="jumbotron d-flex hero" style={{ borderBottom: '3px solid light grey', boxShadow: "0 2px 4px rgb(0 0 0 / 8%)" }}>
+        <div className="jumbotron d-flex hero" style={{ borderBottom: '3px solid light grey', boxShadow: "0 2px 4px rgb(0 0 0 / 8%)"}}>
             <Container>
                 <Row>
                     <Col xs={12} lg={8}>
 
-                        <div className="mr-2">
+                        <div className="mr-2 pt-5">
                             <h1 className="display-4 font-weight-bold">West 3 Solutions!</h1>
                             <p className="lead" style={{ color: "inherit", fontWeight: "bold" }}>The easiest way to get hired.</p>
                             <hr className="my-5" />

@@ -8,7 +8,7 @@ const Hero2 = ({ heading, description, image }) => {
             <Container>
                 <Row>
                     <Col xs={12} lg={8}>
-                        <div className="mr-2">
+                        <div className="mr-2 pt-5">
                             <h1 className="display-4 font-weight-bold">{heading}</h1>
                             <hr className="my-5" />
                             <p style={{ color: "inherit", fontWeight: "bold" }}>{description}</p>

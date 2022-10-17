@@ -5,7 +5,7 @@
 .navBar{
   width: 100%;
   background: rgb(2,0,36);
-  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(28,14,189,1) 100%);
+  background: linear-gradient(90deg, rgb(86, 77, 190) 50%, rgb(23, 20, 65) 100%);
   position: fixed;
   display: flex;
   flex-wrap: wrap;
@@ -38,6 +38,7 @@
   color: lightgreen;
   font-size: 35px;
 }
+
 .hero{
   padding: 1rem;
   background-color: azure;
