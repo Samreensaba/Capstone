@@ -13,6 +13,7 @@
   justify-content: space-between;
   padding: 0.5rem 11rem;
   z-index: 4;
+  
 }
 .registrationForm{
   margin-top: 2rem;
@@ -38,7 +39,7 @@
   font-size: 35px;
 }
 .hero{
-  padding: 1rem 12rem;
+  padding: 1rem;
   background-color: azure;
   color: rgb(57, 57, 143);
   background: linear-gradient(40deg, azure 0, rgb(116, 172, 172) 100%)
