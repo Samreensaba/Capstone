@@ -7,7 +7,7 @@ const Hero = () => {
         <div className="jumbotron d-flex hero" style={{ borderBottom: '3px solid light grey', boxShadow: "0 2px 4px rgb(0 0 0 / 8%)" }}>
             <Container>
                 <Row>
-                    <Col md={12} lg={8}>
+                    <Col xs={12} lg={8}>
 
                         <div className="mr-2">
                             <h1 className="display-4 font-weight-bold">West 3 Solutions!</h1>
